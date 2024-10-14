@@ -3,8 +3,8 @@
 ## Installation
 
 ```bash
-$ git clone https://github.com/fdjrr/tas-test
-$ cd tas-test
+$ git clone https://github.com/fdjrr/tas-example-test
+$ cd tas-example-test
 $ composer install
 $ npm install
 $ cp .env.example .env
@@ -15,7 +15,7 @@ $ npm run dev
 
 ## Nginx Config
 
-### 1. If you want http://localhost/tas-test, follow this config
+### 1. If you want http://localhost/tas-example-test, follow this config
 
 ```bash
 server {
@@ -32,8 +32,8 @@ server {
         try_files $uri $uri/ /index.php?$query_string;
     }
 
-    location /tas-test {
-        alias "D:/Development/Sites/tas-test/public";
+    location /tas-example-test {
+        alias "D:/Development/Sites/tas-example-test/public";
         try_files $uri $uri/ @tas_test;
 
         location ~ \.php$ {
@@ -45,7 +45,7 @@ server {
     }
 
     location @tas_test {
-        rewrite /tas-test/(.*)$ /tas-test/index.php?/$1 last;
+        rewrite /tas-example-test/(.*)$ /tas-example-test/index.php?/$1 last;
     }
 
     error_page 404 /index.php;
@@ -59,14 +59,14 @@ server {
 }
 ```
 
-### 2. If you want http://tas-test.domain.com, follow this config
+### 2. If you want http://tas-example-test.domain.com, follow this config
 
 ```bash
 server {
     listen 80;
     listen [::]:80;
-    server_name tas-test.domain.com;
-    root /var/www/tas-test/public;
+    server_name tas-example-test.domain.com;
+    root /var/www/tas-example-test/public;
 
     add_header X-Frame-Options "SAMEORIGIN";
     add_header X-Content-Type-Options "nosniff";
