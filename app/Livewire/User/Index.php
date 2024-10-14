@@ -37,6 +37,7 @@ class Index extends Component
     public $id;
 
     public $mode = 'store';
+    public $titleMode = 'Create User';
 
     public $name;
     public $email;
@@ -70,7 +71,12 @@ class Index extends Component
 
     public function create()
     {
-        $this->mode = 'store';
+        $this->mode      = 'store';
+        $this->titleMode = 'Create User';
+        $this->reset([
+            'name',
+            'email',
+        ]);
 
         $this->dispatch('openUserModal');
     }
@@ -102,7 +108,8 @@ class Index extends Component
     {
         $user = User::find($id);
         if ($user) {
-            $this->mode = 'update';
+            $this->mode      = 'update';
+            $this->titleMode = 'Edit User';
 
             $this->id    = $user->id;
             $this->name  = $user->name;
