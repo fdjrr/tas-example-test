@@ -43,7 +43,7 @@
                         </div>
                         <div class="col-12">
                             <div class="table-responsive">
-                                <table class="table-striped table-hover table text-center text-center">
+                                <table class="table-striped table-hover table text-center">
                                     <thead>
                                         <tr>
                                             <th scope="col">#</th>

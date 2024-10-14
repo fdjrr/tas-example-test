@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Livewire\Livewire;
 
 Route::get('/', \App\Livewire\Dashboard::class)->name('dashboard');
 
@@ -14,4 +15,12 @@ Route::prefix('products')->group(function () {
 // MARK : Users
 Route::prefix('users')->group(function () {
     Route::get('', \App\Livewire\User\Index::class)->name('users.index');
+});
+
+Livewire::setScriptRoute(function ($handle) {
+    return Route::get('/vendor/livewire/livewire.js', $handle);
+});
+
+Livewire::setUpdateRoute(function ($handle) {
+    return Route::post('/laravel/livewire/update', $handle);
 });
