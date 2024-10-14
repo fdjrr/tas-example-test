@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg bg-body-tertiary">
+<nav class="navbar navbar-expand-lg bg-primary navbar-dark">
     <div class="container">
         <a class="navbar-brand" href="{{ route('dashboard') }}">{{ config('app.name') }}</a>
         <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" type="button" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -6,9 +6,9 @@
         </button>
         <div class="navbar-collapse collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav">
-                <a class="nav-link active" href="{{ route('dashboard') }}" aria-current="page" wire:navigate>Home</a>
-                <a class="nav-link" href="{{ route('products.index') }}" wire:navigate>Products</a>
-                <a class="nav-link" href="{{ route('users.index') }}" wire:navigate>Users</a>
+                <x-nav.link href="{{ route('dashboard') }}" :active="Route::is('dashboard')" wire:navigate>Dashboard</x-nav.link>
+                <x-nav.link href="{{ route('products.index') }}" :active="Route::is('products.*')" wire:navigate>Products</x-nav.link>
+                <x-nav.link href="{{ route('users.index') }}" :active="Route::is('users.*')" wire:navigate>Users</x-nav.link>
             </div>
         </div>
     </div>
