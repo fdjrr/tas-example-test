@@ -59,6 +59,8 @@ server {
 }
 ```
 
+> Note : please run `php artisan livewire:publish --assets` before run app & uncomment `Livewire::setScriptRoute` and `Livewire::setUpdateRoute` in `web.php` if you using point 1.
+
 ### 2. If you want http://tas-example-test.domain.com, follow this config
 
 ```bash
@@ -96,5 +98,3 @@ server {
     }
 }
 ```
-
-Note: please comment `Livewire::setScriptRoute` and `Livewire::setUpdateRoute` in `web.php` if you using point 2.
