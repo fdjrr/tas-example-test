@@ -8,7 +8,8 @@
                     </div>
                     <div class="card-body">
                         <div class="mb-3">
-                            <a class="btn btn-success" href="{{ route('products.create') }}" wire:navigate>Create Product</a>
+                            <a class="btn btn-success" href="{{ route('products.create') }}" wire:navigate>Create
+                                Product</a>
                         </div>
                         <div class="row">
                             <div class="col-12 col-md-4 col-lg-3">
@@ -37,7 +38,8 @@
                             <div class="col-12 col-md-4 col-lg-3">
                                 <div class="mb-3">
                                     <label class="form-label" for="search">Search</label>
-                                    <input class="form-control" type="search" wire:model.live="search" placeholder="Example : Laptop">
+                                    <input class="form-control" type="search" wire:model.live="search"
+                                        placeholder="Example : Laptop">
                                 </div>
                             </div>
                         </div>
@@ -61,8 +63,10 @@
                                                 <td>{{ $product->price_formatted }}</td>
                                                 <td><span class="badge bg-info">{{ $product->category?->name }}</span></td>
                                                 <td class="d-flex justify-content-center gap-1">
-                                                    <a class="btn btn-warning btn-sm" href="{{ route('products.edit', $product) }}">Edit</a>
-                                                    <button class="btn btn-danger btn-sm" wire:click="delete({{ $product->id }})">Delete</button>
+                                                    <a class="btn btn-warning btn-sm"
+                                                        href="{{ route('products.edit', $product) }}" wire:navigate>Edit</a>
+                                                    <button class="btn btn-danger btn-sm"
+                                                        wire:click="delete({{ $product->id }})">Delete</button>
                                                 </td>
                                             </tr>
                                         @empty
